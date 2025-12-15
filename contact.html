@@ -31,10 +31,26 @@
       <ul class="contact-list">
         <li>
           <strong>Email:</strong>
-          <a href="mailto:anoukmoreno.inbox@gmail.com?subject=Portfolio%20Contact"s>
+          <a
+            id="emailLink"
+            href="mailto:anoukmoreno.inbox@gmail.com?subject=Portfolio%20Contact"
+          >
             anoukmoreno.inbox@gmail.com
           </a>
+          <button
+            class="copy-btn"
+            id="copyEmailBtn"
+            type="button"
+          >
+            Copy
+          </button>
+          <span
+            class="copy-msg"
+            id="copyMsg"
+            aria-live="polite"
+          ></span>
         </li>
+
         <li>
           <strong>LinkedIn:</strong>
           <a
@@ -45,6 +61,7 @@
             linkedin.com/in/anouk-moreno
           </a>
         </li>
+
         <li>
           <strong>GitHub:</strong>
           <a
@@ -58,6 +75,8 @@
       </ul>
     </section>
   </main>
+
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
