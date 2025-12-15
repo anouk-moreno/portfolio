@@ -20,8 +20,51 @@
   </header>
 
   <main class="container">
-    <h1>Projects</h1>
-    <p>Content coming soon.</p>
+
+    <section class="project">
+      <h1>Projects</h1>
+
+      <article class="project-card">
+        <h2>Permwatch (BSc Thesis Project)</h2>
+
+        <p>
+          Android research app that analyzes installed applications and their declared/granted permissions,
+          then runs a 7-day study asking users about 3 apps per day (high/low/medium usage) and 10 selected
+          permissions per app, prioritizing risky permission combinations (PermPairs) based on prior research.
+        </p>
+
+        <ul>
+          <li><strong>Status:</strong> Completed</li>
+          <li><strong>Code:</strong> Private (university research project)</li>
+          <li><strong>Platform:</strong> Android</li>
+          <li><strong>Backend:</strong> Firebase Realtime Database</li>
+          <li><strong>Key APIs:</strong> PackageManager, Usage Stats / Usage Access, Android permissions model</li>
+        </ul>
+
+        <h3>What it does</h3>
+        <ul>
+          <li>Phone scan: collects installed apps and declared permissions.</li>
+          <li>Daily survey: 3 apps/day selected by usage frequency bucket.</li>
+          <li>Permission sampling: 10 permissions/app prioritizing risky PermPairs.</li>
+          <li>Final analysis of apps containing top risky permission combinations.</li>
+        </ul>
+
+        <h3>Notes</h3>
+        <ul>
+          <li>Repository cannot be shared publicly due to academic privacy constraints.</li>
+          <li>Screenshots and technical explanation available.</li>
+        </ul>
+
+        <h3>Potential improvements</h3>
+        <ul>
+          <li>Refactor selection logic to improve robustness across devices.</li>
+          <li>Improve permission explanation UX.</li>
+          <li>Add automated tests for survey flow and selection pipeline.</li>
+        </ul>
+      </article>
+
+    </section>
+
   </main>
 
 </body>
