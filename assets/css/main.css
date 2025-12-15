@@ -102,3 +102,56 @@ body {
   text-decoration: underline;
 }
 
+.home {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-subtitle {
+  max-width: 60ch;
+  margin: 1rem auto 1.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.home-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+.btn-secondary {
+  opacity: 0.9;
+}
+
+.btn-small {
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+}
+
+.featured {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.featured-card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+}
