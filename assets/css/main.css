@@ -77,3 +77,28 @@ body {
   margin: 0.75rem 0 1rem;
   padding-left: 1.2rem;
 }
+
+.contact {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-list a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
