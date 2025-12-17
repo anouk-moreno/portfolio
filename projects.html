@@ -20,7 +20,6 @@
   </header>
 
   <main class="container">
-
     <section class="project">
       <h1>Projects</h1>
 
@@ -61,27 +60,37 @@
           <li>Improve permission explanation UX.</li>
           <li>Add automated tests for survey flow and selection pipeline.</li>
         </ul>
+
         <h3>Screenshots</h3>
-            <div class="screenshots-horizontal">
-                <a href="assets/img/permwatch-1.jpg" target="_blank" rel="noopener">
-                    <img src="assets/img/permwatch-1.jpg" alt="Permwatch onboarding screen">
-                </a>
 
-                <a href="assets/img/permwatch-2.jpg" target="_blank" rel="noopener">
-                    <img src="assets/img/permwatch-2.jpg" alt="Permwatch overview 2">
-                </a>
+        <div class="screenshots-strip" aria-label="Permwatch screenshots">
+          <button class="shot" type="button" data-full="assets/img/permwatch-1.jpg" aria-label="Open screenshot 1">
+            <img src="assets/img/permwatch-1.jpg" alt="Permwatch overview part 1">
+          </button>
 
-                <a href="assets/img/permwatch-3.png" target="_blank" rel="noopener">
-                    <img src="assets/img/permwatch-3.png" alt="Permwatch graph">
-                </a>
-            </div>
+          <button class="shot" type="button" data-full="assets/img/permwatch-2.jpg" aria-label="Open screenshot 2">
+            <img src="assets/img/permwatch-2.jpg" alt="Permwatch overview part 2">
+          </button>
+
+          <button class="shot" type="button" data-full="assets/img/permwatch-3.png" aria-label="Open screenshot 3">
+            <img src="assets/img/permwatch-3.png" alt="Permwatch flow diagram">
+          </button>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" hidden>
+          <div class="lightbox-backdrop" data-close="true"></div>
+
+          <figure class="lightbox-content" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+            <img id="lightboxImg" alt="">
+            <button class="lightbox-close" type="button" data-close="true" aria-label="Close">✕</button>
+          </figure>
+        </div>
 
       </article>
-
     </section>
-
   </main>
 
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
