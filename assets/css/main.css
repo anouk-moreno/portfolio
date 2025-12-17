@@ -9,16 +9,24 @@ body {
   color: #f5f5f5;
 }
 
+/* ---------- Layout ---------- */
+
 .container {
   min-height: 100vh;
+  padding-top: 6rem;
+}
+
+.container--centered {
+  min-height: 100vh;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
 }
 
-/* Header / Nav */
+/* ---------- Header / Nav ---------- */
+
 .site-header {
   width: 100%;
   padding: 1rem 2rem;
@@ -61,16 +69,16 @@ body {
   text-decoration: underline;
 }
 
-/* Projects */
+/* ---------- Projects ---------- */
+
 .project {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
 .project-card {
-  width: 100%;
   max-width: 900px;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto 0;
   padding: 1.5rem;
   border: 1px solid #2a2a2a;
   border-radius: 12px;
@@ -85,7 +93,8 @@ body {
   padding-left: 1.2rem;
 }
 
-/* About */
+/* ---------- About ---------- */
+
 .about {
   width: min(900px, 92%);
   margin: 0 auto;
@@ -96,7 +105,8 @@ body {
   line-height: 1.6;
 }
 
-/* Contact */
+/* ---------- Contact ---------- */
+
 .contact {
   width: min(900px, 92%);
   margin: 0 auto;
@@ -121,47 +131,7 @@ body {
   text-decoration: underline;
 }
 
-/* Copy button (email) */
-.copy-btn {
-  margin-left: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border: 1px solid #2a2a2a;
-  background: transparent;
-  color: #f5f5f5;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.copy-btn:hover {
-  text-decoration: underline;
-}
-
-.copy-msg {
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Home */
-.home {
-  width: min(900px, 92%);
-  margin: 0 auto;
-  text-align: center;
-}
-
-.home-subtitle {
-  max-width: 60ch;
-  margin: 1rem auto 1.5rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.home-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
+/* ---------- Buttons ---------- */
 
 .btn {
   display: inline-block;
@@ -182,7 +152,28 @@ body {
 
 .btn-small {
   padding: 0.45rem 0.8rem;
-  border-radius: 10px;
+}
+
+/* ---------- Home ---------- */
+
+.home {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-subtitle {
+  max-width: 60ch;
+  margin: 1rem auto 1.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.home-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .featured {
@@ -197,13 +188,14 @@ body {
   border-radius: 12px;
 }
 
-/* Horizontal screenshots strip */
+/* ---------- Screenshots Slider ---------- */
+
 .screenshots-strip {
   display: flex;
-  gap: 0.9rem;
+  gap: 12px;
   overflow-x: auto;
-  padding: 0.5rem 0.25rem 0.75rem;
-  margin-top: 0.75rem;
+  padding: 10px 4px 14px;
+  margin-top: 12px;
   scroll-snap-type: x mandatory;
 }
 
@@ -230,12 +222,8 @@ body {
   border-radius: 12px;
 }
 
-.shot:focus-visible {
-  outline: 2px solid #f5f5f5;
-  outline-offset: 2px;
-}
+/* ---------- Lightbox ---------- */
 
-/* Lightbox overlay */
 .lightbox[hidden] {
   display: none;
 }
@@ -267,7 +255,6 @@ body {
   max-height: 100%;
   border-radius: 12px;
   border: 1px solid #2a2a2a;
-  background: #0f0f0f;
 }
 
 .lightbox-close {
