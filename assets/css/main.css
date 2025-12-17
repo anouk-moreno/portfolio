@@ -155,3 +155,19 @@ body {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
 }
+
+.screenshots-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.screenshots-horizontal img {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+}
