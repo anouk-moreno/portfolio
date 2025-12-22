@@ -297,3 +297,15 @@ body {
   padding: 0.35rem 0.55rem;
   cursor: pointer;
 }
+
+/* ---------- Primary CTA ---------- */
+
+.btn-primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-weak);
+  border-color: var(--accent);
+}
