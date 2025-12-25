@@ -102,7 +102,7 @@ body {
   border: 1px solid var(--border);
   background: var(--surface);
   border-radius: 12px;
-  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+  /* No hover or transitions here: it's informative, not interactive */
 }
 
 .project-card h2 {
@@ -203,6 +203,13 @@ body {
   text-align: center;
 }
 
+.home h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
 .home-subtitle {
   color: var(--muted);
   max-width: 60ch;
@@ -227,16 +234,7 @@ body {
 .featured {
   margin-top: 2.5rem;
   text-align: left;
-}
-
-.featured-card {
-  margin-top: 1rem;
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 12px;
-  border-left: 3px solid var(--accent);
-  transition: border-color 0.18s ease, background 0.18s ease;
+  max-width: 700px;
 }
 
 .featured h2 {
@@ -246,18 +244,15 @@ body {
   letter-spacing: 0.08em;
 }
 
-
-.featured-card:hover {
-  border-color: var(--accent);
+.featured-card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+  /* No hover: it's informative, not clickable */
 }
-
-.home h1 {
-  font-size: 2.6rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
 
 /* ---------- Screenshots Slider ---------- */
 
@@ -284,11 +279,12 @@ body {
   padding: 0;
   cursor: pointer;
   scroll-snap-align: start;
-  transition: border-color 0.18s ease;
+  transition: border-color 0.18s ease, background 0.18s ease;
 }
 
 .shot:hover {
   border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .shot img {
