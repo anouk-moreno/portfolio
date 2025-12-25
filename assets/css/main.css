@@ -114,10 +114,6 @@ body {
   padding-left: 1.2rem;
 }
 
-.project-card:hover {
-  border-color: var(--accent);
-}
-
 /* ---------- About ---------- */
 
 .about {
@@ -242,6 +238,14 @@ body {
   border-left: 3px solid var(--accent);
   transition: border-color 0.18s ease, background 0.18s ease;
 }
+
+.featured h2 {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 
 .featured-card:hover {
   border-color: var(--accent);

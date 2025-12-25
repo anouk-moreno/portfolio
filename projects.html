@@ -32,42 +32,58 @@
       <h1>Projects</h1>
 
       <article class="project-card">
-        <h2>Permwatch (BSc Thesis Project)</h2>
+        <h2>Permwatch</h2>
+        <p><em>Bachelor’s Thesis Project · Android Security Research</em></p>
 
         <p>
-          Android research app that analyzes installed applications and their declared/granted permissions,
-          then runs a 7-day study asking users about 3 apps per day (high/low/medium usage) and 10 selected
-          permissions per app, prioritizing risky permission combinations (PermPairs) based on prior research.
+          Permwatch is an Android research application designed to study how users interact with application
+          permissions and how their awareness of permission-related risks evolves over time.
         </p>
 
+        <p>
+          The system performs an on-device analysis of installed applications, focusing on both declared
+          permissions and their granted state. Based on application usage frequency, users are asked daily
+          questions about a small subset of their installed apps, covering high-, medium-, and low-usage
+          applications.
+        </p>
+
+        <p>
+          Over a seven-day period, the study guides users through short daily surveys covering a curated set
+          of permissions selected based on prior research. Permwatch prioritizes permissions that belong to
+          previously identified high-risk combinations, while still asking users about individual permissions
+          to avoid introducing unnecessary complexity.
+        </p>
+
+        <p>
+          On the final day, users receive a personalized overview highlighting applications that contain
+          potentially risky permission combinations, encouraging reflection on permission choices and their
+          security implications.
+        </p>
+
+        <p>
+          The project integrates Android core APIs for application and usage analysis and uses Firebase
+          Realtime Database for secure data collection throughout the study. Due to academic and privacy
+          constraints, the source code is private.
+        </p>
+
+        <h3>Key characteristics</h3>
         <ul>
-          <li><strong>Status:</strong> Completed</li>
-          <li><strong>Code:</strong> Private (university research project)</li>
-          <li><strong>Platform:</strong> Android</li>
-          <li><strong>Backend:</strong> Firebase Realtime Database</li>
-          <li><strong>Key APIs:</strong> PackageManager, Usage Stats / Usage Access, Android permissions model</li>
+          <li>Longitudinal, user-centric study design (7 days)</li>
+          <li>Permission analysis based on real-world usage frequency</li>
+          <li>Focus on risk emerging from permission combinations rather than individual permissions</li>
+          <li>On-device data collection combined with cloud-based aggregation</li>
         </ul>
 
-        <h3>What it does</h3>
-        <ul>
-          <li>Phone scan: collects installed apps and declared permissions.</li>
-          <li>Daily survey: 3 apps/day selected by usage frequency bucket.</li>
-          <li>Permission sampling: 10 permissions/app prioritizing risky PermPairs.</li>
-          <li>Final analysis of apps containing top risky permission combinations.</li>
-        </ul>
+        <h3>Current status</h3>
+        <p>Completed as part of a Bachelor’s thesis project.</p>
 
-        <h3>Notes</h3>
-        <ul>
-          <li>Repository cannot be shared publicly due to academic privacy constraints.</li>
-          <li>Screenshots and technical explanation available.</li>
-        </ul>
-
-        <h3>Potential improvements</h3>
-        <ul>
-          <li>Refactor selection logic to improve robustness across devices.</li>
-          <li>Improve permission explanation UX.</li>
-          <li>Add automated tests for survey flow and selection pipeline.</li>
-        </ul>
+        <h3>Potential future improvements</h3>
+        <p>
+          Possible extensions include refining the existing codebase, extending the study duration to better
+          capture long-term behavioral changes, and exploring privacy nudging techniques. Further improvements
+          could focus on enhancing user-facing explanations of permission risks while maintaining a low
+          cognitive load.
+        </p>
 
         <h3>Screenshots</h3>
 
