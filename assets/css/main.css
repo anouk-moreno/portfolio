@@ -341,3 +341,8 @@ body {
   padding: 0.35rem 0.55rem;
   cursor: pointer;
 }
+
+
+.featured-card + .featured-card {
+  margin-top: 0.9rem;
+}
