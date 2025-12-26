@@ -89,70 +89,6 @@ body {
   text-decoration: underline;
 }
 
-/* ---------- Projects ---------- */
-
-.project {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-}
-
-.project-card {
-  max-width: 900px;
-  margin: 1.5rem auto 0;
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 12px;
-  /* No hover or transitions here: it's informative, not interactive */
-}
-
-.project-card h2 {
-  margin-top: 0;
-}
-
-.project-card ul {
-  margin: 0.75rem 0 1rem;
-  padding-left: 1.2rem;
-}
-
-/* ---------- About ---------- */
-
-.about {
-  width: min(900px, 92%);
-  margin: 0 auto;
-}
-
-.about p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-/* ---------- Contact ---------- */
-
-.contact {
-  width: min(900px, 92%);
-  margin: 0 auto;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
-
-.contact-list li {
-  margin-bottom: 0.75rem;
-}
-
-.contact-list a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.contact-list a:hover {
-  text-decoration: underline;
-}
-
 /* ---------- Buttons ---------- */
 
 .btn {
@@ -232,6 +168,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Featured section */
 .featured {
   margin-top: 2.5rem;
   text-align: left;
@@ -246,6 +183,7 @@ body {
   letter-spacing: 0.08em;
 }
 
+/* Featured cards (non-clickable base) */
 .featured-card {
   margin-top: 1rem;
   padding: 1.5rem;
@@ -253,7 +191,92 @@ body {
   background: var(--surface);
   border-radius: 12px;
   border-left: 3px solid var(--accent);
-  /* No hover: it's informative, not clickable */
+}
+
+/* Spacing between featured cards */
+.featured-card + .featured-card {
+  margin-top: 0.9rem;
+}
+
+/* Clickable featured cards (Home links) */
+.featured-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.featured-link:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.featured-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Projects ---------- */
+
+.project {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.project-card {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  scroll-margin-top: 90px;
+}
+
+.project-card h2 {
+  margin-top: 0;
+}
+
+.project-card ul {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.2rem;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Screenshots Slider ---------- */
@@ -344,24 +367,166 @@ body {
   cursor: pointer;
 }
 
-
-.featured-card + .featured-card {
-  margin-top: 0.9rem;
+:target {
+  scroll-margin-top: 90px;
 }
 
 
-.featured-link {
-  display: block;
+/* ---------- Projects (grid) ---------- */
+
+.projects-intro {
+  color: var(--muted);
+  margin: 0.75rem 0 1.25rem;
+  line-height: 1.6;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 860px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-tile {
+  text-align: left;
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
   color: var(--text);
-  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
-.featured-link:hover {
+.project-tile:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
 }
 
-.featured-link:focus-visible {
+.project-tile:active {
+  transform: translateY(1px);
+}
+
+.project-tile:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+.project-tile-top h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.project-tag {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-tile-desc {
+  margin: 0.9rem 0 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+  opacity: 0.95;
+}
+
+.project-tile-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Modal (project details) ---------- */
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 92vw);
+  height: min(86vh, 900px);
+  margin: 7vh auto 0;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 20, 0.92);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 1.25rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.modal-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.modal-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  overflow: auto;
+}
+
+.modal-body p {
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.96;
+}
+
+.modal-body h3 {
+  margin-top: 1.25rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 15, 15, 0.9);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  border-color: var(--accent);
+}
+
+body.modal-open {
+  overflow: hidden;
 }

@@ -13,8 +13,8 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
 
+<body>
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav-logo">Anouk Moreno</a>
@@ -30,40 +30,88 @@
   <main class="container">
     <section class="project">
       <h1>Projects</h1>
+      <p class="projects-intro">
+        Selected work across Android security research and fintech-oriented risk detection. Click a project to view details.
+      </p>
 
-      <article class="project-card" id="permwatch">
-        <h2>Permwatch</h2>
-        <p><em>Bachelor’s Thesis Project · Android Security Research</em></p>
+      <div class="projects-grid" aria-label="Projects list">
+        <!-- Card: Permwatch -->
+        <button class="project-tile" type="button" data-modal="modal-permwatch" data-hash="permwatch">
+          <div class="project-tile-top">
+            <h2>Permwatch</h2>
+            <p class="project-tag">Bachelor’s Thesis · Android Security Research</p>
+          </div>
 
+          <p class="project-tile-desc">
+            Android research app studying permission awareness over time using on-device analysis and a 7-day longitudinal survey.
+          </p>
+
+          <p class="project-tile-meta">
+            Status: Completed · Code: Private
+          </p>
+        </button>
+
+        <!-- Card: Fraud Detection -->
+        <button class="project-tile" type="button" data-modal="modal-fraud" data-hash="fraud-detection">
+          <div class="project-tile-top">
+            <h2>Fraud Detection System</h2>
+            <p class="project-tag">Fintech · ML + Statistical Baselines</p>
+          </div>
+
+          <p class="project-tile-desc">
+            Transaction-level fraud detection focused on risk signals, explainability, and reducing false positives in financially relevant systems.
+          </p>
+
+          <p class="project-tile-meta">
+            Status: In progress · Repo: Private / not published yet
+          </p>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== -->
+  <!-- Modals (Case Studies) -->
+  <!-- ===================== -->
+
+  <!-- Modal: Permwatch -->
+  <div class="modal" id="modal-permwatch" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="permwatch-title">
+      <button class="modal-close" type="button" data-close="true" aria-label="Close">✕</button>
+
+      <header class="modal-header">
+        <h2 id="permwatch-title">Permwatch</h2>
+        <p class="modal-subtitle">Bachelor’s Thesis Project · Android Security Research</p>
+      </header>
+
+      <div class="modal-body">
         <p>
-          Permwatch is an Android research application designed to study how users interact with application
-          permissions and how their awareness of permission-related risks evolves over time.
+          Permwatch is an Android research application designed to study how users interact with application permissions
+          and how their awareness of permission-related risks evolves over time.
         </p>
 
         <p>
-          The system performs an on-device analysis of installed applications, focusing on both declared
-          permissions and their granted state. Based on application usage frequency, users are asked daily
-          questions about a small subset of their installed apps, covering high-, medium-, and low-usage
-          applications.
+          The system performs an on-device analysis of installed applications, focusing on both declared permissions and
+          their granted state. Based on application usage frequency, users are asked daily questions about a small subset
+          of their installed apps, covering high-, medium-, and low-usage applications.
         </p>
 
         <p>
-          Over a seven-day period, the study guides users through short daily surveys covering a curated set
-          of permissions selected based on prior research. Permwatch prioritizes permissions that belong to
-          previously identified high-risk combinations, while still asking users about individual permissions
-          to avoid introducing unnecessary complexity.
+          Over a seven-day period, the study guides users through short daily surveys covering a curated set of permissions
+          selected based on prior research. Permwatch prioritizes permissions that belong to previously identified high-risk
+          combinations, while still asking users about individual permissions to avoid introducing unnecessary complexity.
         </p>
 
         <p>
-          On the final day, users receive a personalized overview highlighting applications that contain
-          potentially risky permission combinations, encouraging reflection on permission choices and their
-          security implications.
+          On the final day, users receive a personalized overview highlighting applications that contain potentially risky
+          permission combinations, encouraging reflection on permission choices and their security implications.
         </p>
 
         <p>
-          The project integrates Android core APIs for application and usage analysis and uses Firebase
-          Realtime Database for secure data collection throughout the study. Due to academic and privacy
-          constraints, the source code is private.
+          The project integrates Android core APIs for application and usage analysis and uses Firebase Realtime Database for
+          secure data collection throughout the study. Due to academic and privacy constraints, the source code is private.
         </p>
 
         <h3>Key characteristics</h3>
@@ -79,14 +127,12 @@
 
         <h3>Potential future improvements</h3>
         <p>
-          Possible extensions include refining the existing codebase, extending the study duration to better
-          capture long-term behavioral changes, and exploring privacy nudging techniques. Further improvements
-          could focus on enhancing user-facing explanations of permission risks while maintaining a low
-          cognitive load.
+          Possible extensions include refining the existing codebase, extending the study duration to better capture
+          long-term behavioral changes, and exploring privacy nudging techniques. Further improvements could focus on
+          enhancing user-facing explanations of permission risks while maintaining a low cognitive load.
         </p>
 
         <h3>Screenshots</h3>
-
         <div class="screenshots-strip" aria-label="Permwatch screenshots">
           <button class="shot" type="button" data-full="assets/img/permwatch-1.jpg" aria-label="Open screenshot 1">
             <img src="assets/img/permwatch-1.jpg" alt="Permwatch overview part 1">
@@ -100,53 +146,52 @@
             <img src="assets/img/permwatch-3.png" alt="Permwatch flow diagram">
           </button>
         </div>
+      </div>
+    </section>
+  </div>
 
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" hidden>
-          <div class="lightbox-backdrop" data-close="true"></div>
+  <!-- Modal: Fraud -->
+  <div class="modal" id="modal-fraud" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
 
-          <figure class="lightbox-content" role="dialog" aria-modal="true" aria-label="Screenshot preview">
-            <img id="lightboxImg" alt="">
-            <button class="lightbox-close" type="button" data-close="true" aria-label="Close">✕</button>
-          </figure>
-        </div>
-      </article>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="fraud-title">
+      <button class="modal-close" type="button" data-close="true" aria-label="Close">✕</button>
 
-      <article class="project-card" id="fraud-detection">
-        <h2>Fraud Detection System</h2>
-        <p><em>Fintech · Machine Learning · Risk Signals</em></p>
+      <header class="modal-header">
+        <h2 id="fraud-title">Fraud Detection System</h2>
+        <p class="modal-subtitle">Fintech · Transaction Risk Detection (In progress)</p>
+      </header>
 
+      <div class="modal-body">
         <p>
-          A fraud detection project focused on identifying suspicious transaction patterns in financial systems.
-          The goal is to build a realistic pipeline: data preparation, feature engineering, baseline rules,
-          and an ML model with interpretable outputs to support investigation and decision-making.
+          A transaction-level fraud detection project combining statistical baselines and machine learning.
+          The goal is to build an explainable, robust pipeline that flags suspicious patterns while reducing
+          false positives in financially relevant systems.
         </p>
 
         <h3>Current focus</h3>
         <ul>
-          <li>Defining the transaction schema and threat model (what “fraud” means in this context).</li>
-          <li>Building baselines (rules/statistical thresholds) and comparing them to an ML approach.</li>
-          <li>Feature engineering for anomaly/risk signals (amount, frequency, velocity, device/user patterns).</li>
-          <li>Evaluation with emphasis on precision/false positives and practical usability.</li>
+          <li>Defining risk signals and realistic evaluation metrics</li>
+          <li>Feature engineering and baseline modeling</li>
+          <li>Explainability and analysis of false positives</li>
+          <li>Clean documentation for a portfolio-grade case study</li>
         </ul>
 
         <h3>Status</h3>
-        <ul>
-          <li><strong>Status:</strong> In progress</li>
-          <li><strong>Code:</strong> Private for now</li>
-          <li><strong>Planned deliverables:</strong> technical write-up, demo results, and reproducible pipeline</li>
-        </ul>
-
-        <h3>Planned improvements</h3>
-        <ul>
-          <li>Model monitoring and drift considerations.</li>
-          <li>Explainability (feature importance + clear risk reasons per transaction).</li>
-          <li>Stress-testing against class imbalance and realistic fraud rates.</li>
-        </ul>
-      </article>
-
+        <p>In progress — repository not published yet.</p>
+      </div>
     </section>
-  </main>
+  </div>
+
+  <!-- Lightbox for screenshots (reused) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-backdrop" data-close="true"></div>
+
+    <figure class="lightbox-content" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+      <img id="lightboxImg" alt="">
+      <button class="lightbox-close" type="button" data-close="true" aria-label="Close">✕</button>
+    </figure>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
