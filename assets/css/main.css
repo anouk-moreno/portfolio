@@ -36,6 +36,7 @@ body {
 .container--centered {
   min-height: 100vh;
   padding-top: 6rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,7 +235,8 @@ body {
 .featured {
   margin-top: 2.5rem;
   text-align: left;
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .featured h2 {
@@ -345,4 +347,21 @@ body {
 
 .featured-card + .featured-card {
   margin-top: 0.9rem;
+}
+
+
+.featured-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.featured-link:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.featured-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
