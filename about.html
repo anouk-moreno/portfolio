@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>About — Anouk Moreno</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -11,93 +12,108 @@
     rel="stylesheet"
   >
 
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav-logo">Anouk Moreno</a>
 
       <ul class="nav-links">
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Main -->
   <main class="container">
-    <section class="about">
+    <section class="about-lead">
       <h1>About</h1>
 
+      <p class="section-intro">
+        Computer Science graduate focused on cybersecurity and financially relevant systems.
+      </p>
+
       <div class="about-grid">
+
         <!-- Left: About text -->
-        <div class="project-card">
+        <article class="project-card about-card">
           <p>
-            Hi, my name is Anouk. I studied Computer Science with a specialization in Statistics at LMU Munich, Germany.
-            Throughout my degree, I was exposed to a wide range of topics related to software development, computer
-            architecture, networks, linear models, and introductory concepts in cybersecurity.
+            Hi, my name is Anouk. I studied Computer Science with a specialization in Statistics
+            at LMU Munich, Germany. Throughout my degree, I was exposed to a wide range of topics
+            related to software development, computer architecture, networks, linear models,
+            and introductory concepts in cybersecurity.
           </p>
 
           <p>
-            I would not say that I have deep expertise in cybersecurity yet. However, it is an area that has gradually
-            captured my interest, particularly when applied to user security and real-world systems. At the same time,
-            I am also interested in finance and in problems that lie at the intersection of technology, data, and economics.
-            For this reason, I am currently exploring challenges that combine these domains and trying to understand how
-            they interact in practice.
+            I would not say that I have deep expertise in cybersecurity yet. However, it is an
+            area that has gradually captured my interest, particularly when applied to user
+            security and real-world systems. At the same time, I am also interested in finance
+            and in problems that lie at the intersection of technology, data, and economics.
+            For this reason, I am currently exploring challenges that combine these domains and
+            trying to understand how they interact in practice.
           </p>
 
           <p>
-            During my studies, I had the opportunity to work on applied projects, including my Bachelor’s thesis, which
-            focused on user awareness and mobile permission analysis through a longitudinal study. While this project leaned
-            more towards human–computer interaction than I initially expected, it helped me understand how small technical
-            decisions, data collection choices, and human behavior can significantly affect real-world outcomes.
+            During my studies, I had the opportunity to work on applied projects, including my
+            Bachelor’s thesis, which focused on user awareness and mobile permission analysis
+            through a longitudinal study. While this project leaned more towards
+            human–computer interaction than I initially expected, it helped me understand how
+            small technical decisions, data collection choices, and human behavior can
+            significantly affect real-world outcomes.
           </p>
 
           <p>
-            I am still at an early stage in defining my long-term professional direction, but for now I am focusing on
-            building projects that allow me to explore both cybersecurity-related topics and economically relevant systems.
-            Technical details about my work can be found in the Projects section of this portfolio.
+            I am still at an early stage in defining my long-term professional direction, but
+            for now I am focusing on building projects that allow me to explore both
+            cybersecurity-related topics and economically relevant systems. Technical details
+            about my work can be found in the Projects section of this portfolio.
           </p>
 
           <p>
-            On a more personal note, I plan to add access to my blog in the future, where I will share reflections and
-            interests beyond purely technical topics. A detailed overview of my academic background and experience can be
-            found in my CV, which is available on this page. For any further questions, feel free to reach out through the
-            Contact section.
+            On a more personal note, I plan to add access to my blog in the future, where I will
+            share reflections and interests beyond purely technical topics. A detailed overview
+            of my academic background and experience can be found in my CV, available on this
+            page. For any further questions, feel free to reach out through the Contact section.
           </p>
 
-          <div class="home-actions" style="justify-content: flex-start; margin-top: 1.25rem;">
+          <div class="home-actions" style="justify-content: flex-start; margin-top: 1.75rem;">
             <a class="btn btn-primary" href="projects.html">View Projects</a>
             <a class="btn btn-secondary" href="contact.html">Contact</a>
           </div>
-        </div>
+        </article>
 
-        <!-- Right: CV card -->
-        <aside class="cv-card">
+        <!-- Right: CV -->
+        <aside class="cv-card" aria-label="Curriculum Vitae">
           <h2 class="cv-title">Curriculum Vitae</h2>
-          <p class="cv-note">
-            PDF version. Updated periodically.
-          </p>
+          <p class="cv-note">PDF version. Updated periodically.</p>
 
           <div class="cv-actions">
-            <a class="btn btn-primary" href="assets/cv/cv.pdf" target="_blank" rel="noopener">
+            <a
+              class="btn btn-primary cv-primary"
+              href="assets/cv/cv.pdf"
+              target="_blank"
+              rel="noopener"
+            >
               View CV
             </a>
-            <a class="btn btn-secondary" href="assets/cv/cv.pdf" download>
+
+            <a
+              class="btn btn-secondary"
+              href="assets/cv/cv.pdf"
+              download
+            >
               Download PDF
             </a>
           </div>
-
-          <div class="cv-preview">
-            <p class="cv-preview-text">
-              Preview not embedded to keep the page lightweight. Use “View CV” to open the PDF.
-            </p>
-          </div>
         </aside>
-      </div>
 
+      </div>
     </section>
   </main>
 

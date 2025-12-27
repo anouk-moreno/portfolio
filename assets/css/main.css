@@ -657,7 +657,7 @@ body.lightbox-open {
   margin-top: 1.6rem;
 }
 
-/* CV card: reduce visual competition */
+/* CV card */
 .cv-card {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
@@ -686,26 +686,12 @@ body.lightbox-open {
 }
 
 .cv-actions {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 0.6rem;
-  margin-bottom: 1rem;
 }
 
-/* Make the primary CV button slightly less aggressive */
 .cv-primary {
   opacity: 0.92;
-}
-
-/* Smaller, quieter helper box */
-.cv-preview {
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 0.9rem;
-  color: #9AA4B2;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  opacity: 0.9;
 }
 
 /* Responsive: stack on small screens */
@@ -715,7 +701,8 @@ body.lightbox-open {
   }
 
   .cv-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 0.75rem;
   }
 }
