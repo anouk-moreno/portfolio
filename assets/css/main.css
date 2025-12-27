@@ -612,7 +612,7 @@ body.lightbox-open {
 
 
 /* =========================================
-   About + CV 
+   About + CV
 ========================================= */
 .about-grid {
   display: grid;
@@ -622,11 +622,22 @@ body.lightbox-open {
   margin-top: 1rem;
 }
 
+.about-grid > * {
+  min-width: 0;
+}
+
 .cv-card {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.02);
+}
+
+@media (min-width: 821px) {
+  .cv-card {
+    position: sticky;
+    top: 6.5rem; /* debajo del header fijo */
+  }
 }
 
 .cv-title {
@@ -659,7 +670,7 @@ body.lightbox-open {
 }
 
 /* Responsive: stack on small screens */
-@media (max-width: 900px) {
+@media (max-width: 820px) {
   .about-grid {
     grid-template-columns: 1fr;
   }
@@ -669,3 +680,9 @@ body.lightbox-open {
     flex-wrap: wrap;
   }
 }
+
+.about-actions {
+  justify-content: flex-start;
+  margin-top: 1.25rem;
+}
+
