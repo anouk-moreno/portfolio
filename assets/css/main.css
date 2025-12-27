@@ -612,8 +612,17 @@ body.lightbox-open {
 
 
 /* =========================================
-   About + CV
+   About page specifics
 ========================================= */
+
+.section-intro {
+  max-width: 70ch;
+  margin: 0 0 1.5rem;
+  color: #9AA4B2;
+  line-height: 1.6;
+}
+
+/* About layout */
 .about-grid {
   display: grid;
   grid-template-columns: 1.6fr 0.9fr;
@@ -626,23 +635,46 @@ body.lightbox-open {
   min-width: 0;
 }
 
+/* Text card readability */
+.about-card {
+  padding: 1.75rem;
+}
+
+.about-card p {
+  max-width: 78ch;
+  line-height: 1.75;
+  margin: 0 0 1.1rem;
+  color: #E6EAF0;
+}
+
+.about-lead {
+  font-size: 1.05rem;
+  color: #F3F6FA;
+}
+
+.about-actions {
+  justify-content: flex-start;
+  margin-top: 1.6rem;
+}
+
+/* CV card: reduce visual competition */
 .cv-card {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.35rem;
   background: rgba(255, 255, 255, 0.02);
 }
 
 @media (min-width: 821px) {
   .cv-card {
     position: sticky;
-    top: 6.5rem; /* debajo del header fijo */
+    top: 6.5rem;
   }
 }
 
 .cv-title {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
@@ -660,13 +692,20 @@ body.lightbox-open {
   margin-bottom: 1rem;
 }
 
+/* Make the primary CV button slightly less aggressive */
+.cv-primary {
+  opacity: 0.92;
+}
+
+/* Smaller, quieter helper box */
 .cv-preview {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.9rem;
   color: #9AA4B2;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
+  opacity: 0.9;
 }
 
 /* Responsive: stack on small screens */
@@ -680,9 +719,3 @@ body.lightbox-open {
     flex-wrap: wrap;
   }
 }
-
-.about-actions {
-  justify-content: flex-start;
-  margin-top: 1.25rem;
-}
-
