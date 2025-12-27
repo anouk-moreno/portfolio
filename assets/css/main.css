@@ -609,3 +609,63 @@ body.lightbox-open {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+
+
+/* =========================================
+   About + CV 
+========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.cv-card {
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cv-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cv-note {
+  margin: 0 0 1rem;
+  color: #9AA4B2;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cv-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.cv-preview {
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #9AA4B2;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
