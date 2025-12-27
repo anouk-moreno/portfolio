@@ -1,8 +1,10 @@
+/* =========================================
+   Base reset + theme
+========================================= */
+
 * {
   box-sizing: border-box;
 }
-
-/* ---------- Theme variables ---------- */
 
 :root {
   --bg: #0B0F14;
@@ -17,8 +19,6 @@
   --accent-strong: rgba(59, 130, 246, 0.32);
 }
 
-/* ---------- Base ---------- */
-
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -26,7 +26,20 @@ body {
   color: var(--text);
 }
 
-/* ---------- Layout ---------- */
+/* Lock scroll when overlays are open */
+body.modal-open,
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Improve anchor scroll with fixed header */
+:target {
+  scroll-margin-top: 90px;
+}
+
+/* =========================================
+   Layout containers
+========================================= */
 
 .container {
   min-height: 100vh;
@@ -43,7 +56,9 @@ body {
   align-items: center;
 }
 
-/* ---------- Header / Nav ---------- */
+/* =========================================
+   Header / Nav
+========================================= */
 
 .site-header {
   width: 100%;
@@ -89,7 +104,9 @@ body {
   text-decoration: underline;
 }
 
-/* ---------- Buttons ---------- */
+/* =========================================
+   Buttons
+========================================= */
 
 .btn {
   display: inline-block;
@@ -132,7 +149,9 @@ body {
   border-color: rgba(59, 130, 246, 0.9);
 }
 
-/* ---------- Home ---------- */
+/* =========================================
+   Home
+========================================= */
 
 .home {
   width: min(900px, 92%);
@@ -183,7 +202,7 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* Featured cards (non-clickable base) */
+/* Featured cards */
 .featured-card {
   margin-top: 1rem;
   padding: 1.5rem;
@@ -193,19 +212,18 @@ body {
   border-left: 3px solid var(--accent);
 }
 
-/* Spacing between featured cards */
 .featured-card + .featured-card {
   margin-top: 0.9rem;
 }
 
-/* Clickable featured cards (Home links) */
+/* Clickable featured cards (home only) */
 .featured-link {
   display: block;
   color: var(--text);
   text-decoration: none;
 }
 
-.featured-link:hover {
+.featured-link:hover .featured-card {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.06);
 }
@@ -213,15 +231,19 @@ body {
 .featured-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 14px;
 }
 
-/* ---------- Projects ---------- */
+/* =========================================
+   Projects (page wrapper)
+========================================= */
 
 .project {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
+/* Old-style project card */
 .project-card {
   max-width: 900px;
   margin: 1.5rem auto 0;
@@ -241,145 +263,14 @@ body {
   padding-left: 1.2rem;
 }
 
-/* ---------- About ---------- */
-
-.about {
-  width: min(900px, 92%);
-  margin: 0 auto;
-}
-
-.about p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-/* ---------- Contact ---------- */
-
-.contact {
-  width: min(900px, 92%);
-  margin: 0 auto;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
-
-.contact-list li {
-  margin-bottom: 0.75rem;
-}
-
-.contact-list a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.contact-list a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- Screenshots Slider ---------- */
-
-.screenshots-strip {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 10px 4px 14px;
-  margin-top: 12px;
-  scroll-snap-type: x mandatory;
-  scrollbar-color: var(--border) transparent;
-}
-
-.screenshots-strip::-webkit-scrollbar {
-  height: 10px;
-}
-
-.shot {
-  flex: 0 0 auto;
-  width: 260px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 0;
-  cursor: pointer;
-  scroll-snap-align: start;
-  transition: border-color 0.18s ease, background 0.18s ease;
-}
-
-.shot:hover {
-  border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.shot img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-}
-
-/* ---------- Lightbox ---------- */
-
-.lightbox[hidden] {
-  display: none;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-}
-
-.lightbox-content {
-  position: relative;
-  margin: 5vh auto;
-  width: min(1100px, 92vw);
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  border: 1px solid var(--border);
-  background: rgba(15, 15, 15, 0.9);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 0.35rem 0.55rem;
-  cursor: pointer;
-}
-
-:target {
-  scroll-margin-top: 90px;
-}
-
-
-/* ---------- Projects (grid) ---------- */
-
+/* Projects intro text */
 .projects-intro {
   color: var(--muted);
   margin: 0.75rem 0 1.25rem;
   line-height: 1.6;
 }
 
+/* Projects grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -393,6 +284,7 @@ body {
   }
 }
 
+/* Project tile */
 .project-tile {
   text-align: left;
   width: 100%;
@@ -402,14 +294,14 @@ body {
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .project-tile:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .project-tile:active {
@@ -445,7 +337,99 @@ body {
   font-size: 0.9rem;
 }
 
-/* ---------- Modal (project details) ---------- */
+/* =========================================
+   About
+========================================= */
+
+.about {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Contact
+========================================= */
+
+.contact {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   Screenshots slider (inside modals)
+========================================= */
+
+.screenshots-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 4px 14px;
+  margin-top: 12px;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--border) transparent;
+}
+
+.screenshots-strip::-webkit-scrollbar {
+  height: 10px;
+}
+
+.shot {
+  flex: 0 0 auto;
+  width: 260px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.shot:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shot:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.shot img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* =========================================
+   Modal (project details)
+========================================= */
 
 .modal[hidden] {
   display: none;
@@ -527,6 +511,101 @@ body {
   border-color: var(--accent);
 }
 
-body.modal-open {
-  overflow: hidden;
+.modal-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   Lightbox (screenshots)
+========================================= */
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.lightbox-content {
+  position: relative;
+  margin: 5vh auto;
+  width: min(1100px, 92vw);
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 15, 15, 0.9);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  border-color: var(--accent);
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Lightbox navigation */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 15, 15, 0.85);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: 12px;
+}
+
+.lightbox-next {
+  right: 12px;
+}
+
+.lightbox-nav:hover {
+  border-color: var(--accent);
+}
+
+.lightbox-nav:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }

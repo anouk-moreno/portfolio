@@ -35,7 +35,6 @@
       </p>
 
       <div class="projects-grid" aria-label="Projects list">
-        <!-- Card: Permwatch -->
         <button class="project-tile" type="button" data-modal="modal-permwatch" data-hash="permwatch">
           <div class="project-tile-top">
             <h2>Permwatch</h2>
@@ -51,7 +50,6 @@
           </p>
         </button>
 
-        <!-- Card: Fraud Detection -->
         <button class="project-tile" type="button" data-modal="modal-fraud" data-hash="fraud-detection">
           <div class="project-tile-top">
             <h2>Fraud Detection System</h2>
@@ -69,10 +67,6 @@
       </div>
     </section>
   </main>
-
-  <!-- ===================== -->
-  <!-- Modals (Case Studies) -->
-  <!-- ===================== -->
 
   <!-- Modal: Permwatch -->
   <div class="modal" id="modal-permwatch" hidden>
@@ -135,15 +129,15 @@
         <h3>Screenshots</h3>
         <div class="screenshots-strip" aria-label="Permwatch screenshots">
           <button class="shot" type="button" data-full="assets/img/permwatch-1.jpg" aria-label="Open screenshot 1">
-            <img src="assets/img/permwatch-1.jpg" alt="Permwatch overview part 1">
+            <img src="assets/img/permwatch-1.jpg" alt="Permwatch overview part 1" loading="lazy">
           </button>
 
           <button class="shot" type="button" data-full="assets/img/permwatch-2.jpg" aria-label="Open screenshot 2">
-            <img src="assets/img/permwatch-2.jpg" alt="Permwatch overview part 2">
+            <img src="assets/img/permwatch-2.jpg" alt="Permwatch overview part 2" loading="lazy">
           </button>
 
           <button class="shot" type="button" data-full="assets/img/permwatch-3.png" aria-label="Open screenshot 3">
-            <img src="assets/img/permwatch-3.png" alt="Permwatch flow diagram">
+            <img src="assets/img/permwatch-3.png" alt="Permwatch flow diagram" loading="lazy">
           </button>
         </div>
       </div>
@@ -183,13 +177,21 @@
     </section>
   </div>
 
-  <!-- Lightbox for screenshots (reused) -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" hidden>
-    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-backdrop" data-lightbox-close="true"></div>
 
-    <figure class="lightbox-content" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+    <figure class="lightbox-content" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <span id="lightbox-title" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+        Screenshot preview
+      </span>
+
+      <button class="lightbox-close" type="button" data-lightbox-close="true" aria-label="Close">✕</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev="true" aria-label="Previous">‹</button>
+
       <img id="lightboxImg" alt="">
-      <button class="lightbox-close" type="button" data-close="true" aria-label="Close">✕</button>
+
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next="true" aria-label="Next">›</button>
     </figure>
   </div>
 
