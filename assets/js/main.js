@@ -4,22 +4,23 @@ console.log("Portfolio loaded");
 // Copy email to clipboard
 // ------------------------
 const copyBtn = document.getElementById("copyEmailBtn");
-const msg = document.getElementById("copyMsg");
 const email = "anoukmoreno.inbox@gmail.com";
 
-if (copyBtn && msg) {
+if (copyBtn) {
   copyBtn.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(email);
-      msg.textContent = "Copied.";
+
+      // Subtle visual feedback
+      copyBtn.style.color = "#3B82F6";
+      copyBtn.style.borderColor = "#3B82F6";
+
       setTimeout(() => {
-        msg.textContent = "";
-      }, 1500);
+        copyBtn.style.color = "";
+        copyBtn.style.borderColor = "";
+      }, 800);
     } catch {
-      msg.textContent = "Copy failed.";
-      setTimeout(() => {
-        msg.textContent = "";
-      }, 1500);
+      // Fail silently — consistent with pro UX
     }
   });
 }
