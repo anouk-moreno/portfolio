@@ -817,3 +817,31 @@ body.lightbox-open {
     justify-content: flex-start;
   }
 }
+
+/* Copy button — secondary action */
+.btn-outline {
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  background: transparent;
+  color: #9AA4B2;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-outline:hover {
+  border-color: #3B82F6;       /* mismo acento que el resto */
+  color: #3B82F6;
+}
+
+.btn-outline:active {
+  transform: translateY(0.5px);
+}
+
+.copy-msg {
+  font-size: 0.8rem;
+  color: #9AA4B2;
+  opacity: 0.9;
+  min-width: 60px;
+}
