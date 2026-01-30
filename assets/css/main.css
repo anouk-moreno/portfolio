@@ -349,6 +349,19 @@ body.lightbox-open {
   font-size: 0.9rem;
 }
 
+.project-tile-meta a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-tile-meta a:hover {
+  color: var(--accent);
+}
+
+
 /* =========================================
    About
 ========================================= */
