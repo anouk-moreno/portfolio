@@ -234,6 +234,18 @@ body.lightbox-open {
   border-radius: 14px;
 }
 
+.project-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.project-status span {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+
 /* =========================================
    Projects (page wrapper)
 ========================================= */
