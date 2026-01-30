@@ -84,7 +84,7 @@
 
       <header class="modal-header">
         <h2 id="permwatch-title">Permwatch</h2>
-        <p class="modal-subtitle">Bachelor’s Thesis Project · Android Security Research</p>
+        <p class="modal-subtitle">Bachelor’s Thesis · Mobile Security & User Awareness</p>
       </header>
 
       <div class="modal-body">
@@ -159,27 +159,77 @@
       <button class="modal-close" type="button" data-close="true" aria-label="Close">✕</button>
 
       <header class="modal-header">
-        <h2 id="fraud-title">Fraud Detection System</h2>
-        <p class="modal-subtitle">Fintech · Transaction Risk Detection (In progress)</p>
+        <h2 id="fraud-title">Transaction Fraud Detection (Prototype)</h2>
+        <p class="modal-subtitle">
+          Fintech · Suspicious Transaction Detection · Explainable Risk Scoring
+        </p>
       </header>
 
       <div class="modal-body">
         <p>
-          A transaction-level fraud detection project combining statistical baselines and machine learning.
-          The goal is to build an explainable, robust pipeline that flags suspicious patterns while reducing
-          false positives in financially relevant systems.
+          This project explores the design of a prototype system for detecting suspicious financial
+          transactions based on deviations from a user’s typical behavior. Rather than attempting
+          to label transactions as confirmed fraud, the system focuses on early risk identification
+          and prioritization.
         </p>
 
-        <h3>Current focus</h3>
+        <p>
+          The project is inspired by early-stage anti-fraud layers used in real-world financial
+          systems, where interpretability, scalability, and low-latency risk assessment are essential.
+        </p>
+
+        <h3>System approach</h3>
+        <p>
+          The architecture follows a two-layer design. A rule-based baseline captures intuitive
+          behavioral anomalies such as unusual transaction amounts, bursts of activity, improbable
+          location changes, and atypical transaction times.
+        </p>
+
+        <p>
+          On top of this baseline, a simple machine learning model (Logistic Regression) is introduced
+          to evaluate whether combining multiple signals improves detection performance while
+          preserving interpretability.
+        </p>
+
+        <h3>Key characteristics</h3>
         <ul>
-          <li>Defining risk signals and realistic evaluation metrics</li>
-          <li>Feature engineering and baseline modeling</li>
-          <li>Explainability and analysis of false positives</li>
-          <li>Clean documentation for a portfolio-grade case study</li>
+          <li>Explainable, rule-based risk signals derived from basic transaction data</li>
+          <li>Layered design inspired by real-world anti-fraud architectures</li>
+          <li>Risk scoring and prioritization rather than binary fraud classification</li>
+          <li>Evaluation under imbalanced data conditions using standard performance metrics</li>
         </ul>
 
-        <h3>Status</h3>
-        <p>In progress — repository not published yet.</p>
+        <h3>Current status</h3>
+        <p class="project-status-muted">
+          Initial prototype (v1). Functional and evaluated, with clear opportunities for further
+          refinement and extension.
+        </p>
+
+        <h3>Potential future improvements</h3>
+        <p>
+          Possible extensions include incorporating additional behavioral signals, modeling temporal
+          drift in user behavior, and exploring more advanced yet interpretable models. The system
+          could also be integrated into a broader transaction review or decision-support pipeline.
+        </p>
+
+        <div class="modal-actions">
+          <a
+            class="btn btn-primary"
+            href="assets/docs/TFD_Project.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project Report (PDF)
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="assets/docs/TFD_Project.pdf"
+            download
+          >
+            Download PDF
+          </a>
+        </div>
       </div>
     </section>
   </div>
